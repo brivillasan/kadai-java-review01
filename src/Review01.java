@@ -6,15 +6,13 @@ public class Review01 {
 
         int nedan = 1500;
         int zeiritu = 10;
-        int syohizei = nedan / zeiritu;
+        int result = taxMethod(nedan,zeiritu);
 
-        int result = add(nedan,syohizei);
-
-        System.out.println(nedan + "円のの商品の税込価格は" + result + "円(消費税は" + syohizei + "円)です。");
+        System.out.println(nedan + "円のの商品の税込価格は" + (result+nedan) + "円(消費税は" + result + "円)です。");
     }
 
-    public static int add(int nedan,int syohizei) {
-        int result = nedan + syohizei;
+    public static int taxMethod(int nedan,int zeiritu) {
+        int result = nedan * zeiritu / 100;
         return result;
     }
 
